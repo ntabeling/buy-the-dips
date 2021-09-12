@@ -3,6 +3,7 @@ version: '3'
 services:
   database:
     image: 'postgres:latest'
+    restart: always
     ports:
       - 5432:5432
     volumes:
@@ -10,3 +11,18 @@ services:
 
     env_file:
       - .env
+
+  pgadmin:
+    image: dpage/pgadmin4:4.23
+    ports:
+      - 15432:80
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    depends_on:
+      - database
+    env_file:
+      - .env
+
+volumes:
+  database:
+  pgadmin:

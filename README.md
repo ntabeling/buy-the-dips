@@ -1,5 +1,7 @@
 # buy-the-dips
 
+Pgadmin is on port 15432 once the docker container is started.
+
 ### Docker commands
 - `docker-compose up --build` - Build docker image and run it
 - `docker-compose stop` - Stops docker-compose. Can also do this with Ctrl+C, but the command is more consistent because sometimes the container does not stop with the keyboard shortcut.
